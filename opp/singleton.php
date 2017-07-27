@@ -3,8 +3,8 @@
 class connect{
     private $db;
     private static $tb;
-	private $ketqua;
-	private $temp;
+    private $ketqua;
+    private $temp;
     private function __construct(){}
 	
     public static function getInstance(){
@@ -19,7 +19,7 @@ class connect{
       $this->db=mysql_connect($servername,$username,$pass) or die (mysql_error());
       mysql_select_db($namedata,$this->db) or die (mysql_error());
       mysql_query('SET NAMES "utf8"',$this->db);
-	  $sql=mysql_real_escape_string($sql);//use with SQL injection
+      $sql=mysql_real_escape_string($sql);//use with SQL injection
       $this->temp=mysql_query($sql,$this->db);
   	}
 	
@@ -38,7 +38,7 @@ class connect{
 	public function clean()
 	{
 		unset($db);
-    	unset($tb);
+    		unset($tb);
 		unset($ketqua);
 		unset($temp);
 	}
